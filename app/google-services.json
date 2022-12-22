@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "137415308563",
+    "project_id": "nivelacion1234-23a60",
+    "storage_bucket": "nivelacion1234-23a60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137415308563:android:ad2feffd8180c7a18956e6",
+        "android_client_info": {
+          "package_name": "com.example.nivelacion1234"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137415308563-64q3o39lhisqul8j697qsddrk0ocpnq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBGz13BcktBAQc6JNKt7CDCVaqHhDGCm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137415308563-64q3o39lhisqul8j697qsddrk0ocpnq4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

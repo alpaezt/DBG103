@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Nivelacion1234</string>
+    <string name="btnSplash">Inicio</string>
+    <string name="textView">PRODUCTOS</string>
+    <string name="btnInfo">BACK</string>
+    <string name="btnForm">CLICK</string>
+    <string name="btnProduct">VER</string>
+    <string name="textName">Nombre</string>
+    <string name="textDescription">Descripcion</string>
+    <string name="textPrice">Precio</string>
+
+</resources>
