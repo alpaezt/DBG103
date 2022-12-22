@@ -3,7 +3,10 @@ package com.example.nivelacion1234;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.example.nivelacion1234.Adaptadores.ProductoAdapter;
@@ -45,28 +48,34 @@ public class Catalogo extends AppCompatActivity {
         //*************
          */
 
-
         productAdapter = new ProductoAdapter(this, arrayProductos);
         listViewProducts.setAdapter(productAdapter);
         dbFirebase.getData(productAdapter);
+       }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()){
+            case R.id.itemAdd:
+                intent = new Intent(getApplicationContext(), Form.class);
+                startActivity(intent);
+                return true;
+            case R.id.itemMap:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
 
 /*
-public class Catalogo extends AppCompatActivity {
-    private DBHelper dbHelper;
-    private ProductoService productoService;
-
-
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_catalogo);
-
-
-
 
         try {
             dbHelper = new DBHelper(this);
@@ -82,10 +91,6 @@ public class Catalogo extends AppCompatActivity {
 
         }catch (Exception e){
             Log.e("DB", e.toString());
-
-
-
-
 
 
                 dbFirebase.getData(ProductoAdapter, arrayProductos);

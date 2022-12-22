@@ -10,7 +10,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.nivelacion1234.Catalogo;
+import com.example.nivelacion1234.DB.DBFirebase;
 import com.example.nivelacion1234.Entidades.Producto;
+import com.example.nivelacion1234.Form;
 import com.example.nivelacion1234.Info;
 import com.example.nivelacion1234.R;
 
@@ -89,14 +92,26 @@ public class ProductoAdapter extends BaseAdapter {
         btnDeleteProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                DBFirebase dbFirebase = new DBFirebase();
+                dbFirebase.deleteData(producto.getId());
+                Intent intent = new Intent(context, Catalogo.class);
+                context.startActivity(intent);
             }
         });
 
         btnEditProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(context, Form.class);
+                intent.putExtra("edit", producto.getName());
+                intent.putExtra("id", producto.getName());
+                intent.putExtra("name", producto.getName());
+                intent.putExtra("description", producto.getDescription());
+                intent.putExtra("price", String.valueOf(producto.getPrice()));
+                intent.putExtra("image", producto.getImage());
+                intent.putExtra("latitud", producto.getLatitud());
+                intent.putExtra("longitud", producto.getLongitud());
+                context.startActivity(intent);
             }
         });
 
